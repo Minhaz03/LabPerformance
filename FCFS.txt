@@ -1,0 +1,47 @@
+1. Header and Namespace:
+
+#include <iostream>: Includes the iostream header for input/output operations.
+using namespace std;: Brings the std namespace into scope, allowing use of standard objects like cout, cin, and endl without the std:: prefix.
+2. Main Function:
+
+int main() {: Marks the beginning of the program's execution.
+3. Input:
+
+int numProcesses;: Declares an integer variable to store the number of processes.
+cout << "Enter the number of processes: ";: Prompts the user to enter the number of processes.
+cin >> numProcesses;: Reads the input value and stores it in numProcesses.
+4. Arrays:
+
+int processes[numProcesses], burstTimes[numProcesses];: Declares two arrays to store process IDs and their respective burst times (execution times). The size of both arrays is dynamically determined based on user input.
+5. Process Details:
+
+cout << "Enter the process IDs and burst times:\n";: Prompts the user to enter process IDs and burst times.
+for (int i = 0; i < numProcesses; i++) {: Iterates over the number of processes to collect input for each one.
+cout << "Process " << i + 1 << ": ";: Prints a prompt for the current process.
+cin >> processes[i] >> burstTimes[i];: Reads the ID and burst time and stores them in the respective arrays.
+6. Waiting Times:
+
+int waitingTimes[numProcesses];: Declares an array to store waiting times for each process.
+waitingTimes[0] = 0;: Sets the waiting time of the first process to 0 (no waiting).
+for (int i = 1; i < numProcesses; i++) {: Calculates waiting times for subsequent processes:
+waitingTimes[i] = burstTimes[i - 1] + waitingTimes[i - 1];: Adds the burst time of the previous process to its waiting time to determine the current process's waiting time.
+7. Turnaround Times:
+
+int turnaroundTimes[numProcesses];: Declares an array to store turnaround times.
+for (int i = 0; i < numProcesses; i++) {: Calculates turnaround times for all processes:
+turnaroundTimes[i] = burstTimes[i] + waitingTimes[i];: Adds the burst time and waiting time for each process to get its turnaround time.
+8. Output:
+
+cout << "\nProcesses\tBurst Time\tWaiting Time\tTurnaround Time\n";: Prints a table header.
+for (int i = 0; i < numProcesses; i++) {: Prints the process details in a formatted table.
+9. Average Times:
+
+float avgWaitingTime = 0, avgTurnaroundTime = 0;: Declares variables to store average times.
+for (int i = 0; i < numProcesses; i++) {: Calculates the average waiting and turnaround times.
+cout << "\nAverage waiting time: " << avgWaitingTime << endl;: Prints the calculated averages.
+
+
+Key Points:
+
+The code implements the First Come First Served (FCFS) scheduling algorithm.
+It demonstrates input/output, arrays, loops, and calculations in
