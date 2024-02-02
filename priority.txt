@@ -1,0 +1,24 @@
+Lines 4-23:
+These lines implement the main part of the code:
+
+1.Get process count: User inputs the number of processes.
+2.Create arrays: Three arrays store process IDs, burst times, and priorities.
+3.Get process details: User enters IDs, times, and priorities for each process.
+4.Sort processes by priority: A nested loop iterates through the arrays and swaps elements to arrange them in descending order of priority (higher first). The swap function exchanges values between variables.
+
+Lines 25-44:
+
+These lines calculate the waiting and turnaround times:
+
+1.Create arrays: Arrays store waiting times and turnaround times for each process.
+2.Calculate waiting times: Loop iterates through processes after the first one, calculating the waiting time as the sum of the previous process's burst time and its own waiting time.
+3.Calculate turnaround times: Loop iterates through all processes, calculating the turnaround time as the sum of its burst time and waiting time.
+
+Lines 46-64:
+These lines print the results and calculate the average times:
+
+1.Print table header: Headers for the table showing process details.
+2.Print process details: Iterate through processes and print their IDs, burst times, priorities, waiting times, and turnaround times.
+3.Calculate average times: Loop iterates through processes, adding their waiting and turnaround times to cumulative variables. Then, it calculates and prints the average waiting and turnaround times.
+
+Remember: This code implements non-preemptive priority scheduling, meaning once a process starts
